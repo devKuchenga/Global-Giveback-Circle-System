@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="">
+        <siteMapNode url="Default.aspx" title="Home"  description="" />
+        <siteMapNode url="Login.aspk" title="Login"  description="" />
+      <siteMapNode url="AddEditMentee.aspx" title="Add Edit Mentee"  description="" />
+      <siteMapNode url="addeditMenteeSchoolInfo" title="Mentee School information"  description="" />
+      <siteMapNode url="Societallaunch.aspx" title="Societal launch"  description="" />
+      <siteMapNode url="Commitmentinfo.aspx" title="Give Back Commitment Information"  description="" />
+      <siteMapNode url="addeditmentors.aspx" title="Add Edit Mentors"  description="" />
+      <siteMapNode url="Commitmentinfo.aspx" title="Give Back Commitment Information"  description="" />
+      <siteMapNode url="Mentorraiseinvoice.aspx" title="Mentor Raise Invoice"  description="" />
+      <siteMapNode url="addeditpartners.aspx" title="Add Edit Partners"  description="" />
+      <siteMapNode url="Addeditschools.aspx" title="Add Edit Schools"  description="" />
+      <siteMapNode url="sponsorgrantinfo.aspx" title="Add Edit Sponsor grant info"  description="" />
+      <siteMapNode url="rptMentee.aspx" title="Mentee Report"  description="" />
+      <siteMapNode url="rptMentor.aspx" title="Mentor Report"  description="" />
+      <siteMapNode url="admin/menteemaintenance.aspx" title="Drop Downs"  description="" />
+      <siteMapNode url="admin/countries.aspx" title="Countries"  description="" />
+      <siteMapNode url="admin/createusers.aspx" title="Create Users"  description="" />
+    </siteMapNode>
+</siteMap>

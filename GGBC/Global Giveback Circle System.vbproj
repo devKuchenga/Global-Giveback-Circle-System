@@ -1,0 +1,1313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{21DBF2F1-D74B-40E9-A7E0-9885F859DFAF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GGBC</RootNamespace>
+    <AssemblyName>GGBC</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GGBC.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ConnStringGGBC-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Server=41.207.65.67%3b Database=GBCC%3b User Id=gbccuser%3b password=123456%3b Timeout=60" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ConnStringGGBC-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="GGBC.My.MySettings.ClientGBCCConnectionString-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="dbFullSql">
+            <PreSource Path="Data Source=C:\Users\emwaniki.ISL\Documents\Visual Studio 2010\Projects\New folder %283%29\GGBC\GBCC.sdf%3bMax Database Size=2047" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\GGBC.My.MySettings.ClientGBCCConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <PublishDatabases>false</PublishDatabases>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <IncludeAppPool>true</IncludeAppPool>
+    <DeployIisAppPath>Default Web Site/KCDFBeneficiaries</DeployIisAppPath>
+    <DesktopBuildPackageLocation>..\..\..\CURRENT\GGBC.zip</DesktopBuildPackageLocation>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>GGBC.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AntiXSSLibrary, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SanitizerProviders, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="Smartik.Common, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Smartik.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Smartik.Controls, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Smartik.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Countries.aspx" />
+    <Content Include="Admin\CreateUsers.aspx" />
+    <Content Include="Admin\MenteeMaintenance.aspx" />
+    <Content Include="App_Themes\Site\idTabs.css" />
+    <Content Include="App_Themes\Site\images\admin-gvw-bg.gif" />
+    <Content Include="App_Themes\Site\images\admin-menu-bg.gif" />
+    <Content Include="App_Themes\Site\images\admin_menu_bg_gr.gif" />
+    <Content Include="App_Themes\Site\images\cal.gif" />
+    <Content Include="App_Themes\Site\images\Calendar_scheduleHS.png" />
+    <Content Include="App_Themes\Site\images\childgridbg.gif" />
+    <Content Include="App_Themes\Site\images\Custom_gridSeparator.gif" />
+    <Content Include="App_Themes\Site\images\custom_grid_bg.gif" />
+    <Content Include="App_Themes\Site\images\dark-background-bg.png" />
+    <Content Include="App_Themes\Site\images\green_button_bg.gif" />
+    <Content Include="App_Themes\Site\images\header-wrapper-bg.png" />
+    <Content Include="App_Themes\Site\images\KCDF-logo.jpg" />
+    <Content Include="App_Themes\Site\images\KCDF-logo2.jpg" />
+    <Content Include="App_Themes\Site\images\logo-bg.png" />
+    <Content Include="App_Themes\Site\images\main-background-bg.png" />
+    <Content Include="App_Themes\Site\images\tab-line.png" />
+    <Content Include="App_Themes\Site\images\tab.png" />
+    <Content Include="App_Themes\Site\images\UpdateProgress.gif" />
+    <Content Include="App_Themes\Site\Site.css" />
+    <Content Include="BeneficiariesSummary.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Common\ico-configuration.png" />
+    <Content Include="Common\ico-help.gif" />
+    <Content Include="Common\ico-sponsor.png" />
+    <Content Include="GrantBeneficiary.aspx" />
+    <Content Include="Images\admin-menu-bg.gif" />
+    <Content Include="Images\cal.gif" />
+    <Content Include="Images\Calendar_scheduleHS.png" />
+    <Content Include="Images\collapse.png" />
+    <Content Include="Images\altExpand.png" />
+    <Content Include="Images\altCollapse.png" />
+    <Content Include="Images\dark-background-bg.png" />
+    <Content Include="Images\ico-help.gif" />
+    <Content Include="Images\noimageDefault.jpg" />
+    <Content Include="Images\expand.png" />
+    <Content Include="Images\header-wrapper-bg.png" />
+    <Content Include="Images\KCDF-logo.jpg" />
+    <Content Include="Images\logo-bg.png" />
+    <Content Include="Images\main-background-bg.png" />
+    <Content Include="Images\thumbs\placeholder.txt" />
+    <Content Include="Images\UpdateProgress.gif" />
+    <Content Include="LocalOrgAdd.aspx" />
+    <Content Include="LocalOrgDetails.aspx" />
+    <Content Include="LocalOrgs.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MenteeAdd.aspx" />
+    <Content Include="MenteeDetails.aspx" />
+    <Content Include="Mentees.aspx" />
+    <Content Include="MentorAdd.aspx" />
+    <Content Include="MentorDetails.aspx" />
+    <Content Include="Mentors.aspx" />
+    <Content Include="MentorSummary.aspx" />
+    <Content Include="Modules\ConfirmationBox.ascx" />
+    <Content Include="Modules\CountrySelector.ascx" />
+    <Content Include="Modules\DatePicker.ascx" />
+    <Content Include="Modules\ddlCompanySelector.ascx" />
+    <Content Include="Modules\ddlLocalOrgSelector.ascx" />
+    <Content Include="Modules\ddlMentorSelector.ascx" />
+    <Content Include="Modules\ddlSchoolSelector.ascx" />
+    <Content Include="Modules\ddlSelector.ascx" />
+    <Content Include="Modules\DecimalTextBox.ascx" />
+    <Content Include="Modules\EmailTextBox.ascx" />
+    <Content Include="Modules\GrantBeneficiary.ascx" />
+    <Content Include="Modules\InvoicePayment.ascx" />
+    <Content Include="Modules\LocalOrganizationAdd.ascx" />
+    <Content Include="Modules\LocalOrganizationDetails.ascx" />
+    <Content Include="Modules\LocalOrganizationInfo.ascx" />
+    <Content Include="Modules\LocalOrganizations.ascx" />
+    <Content Include="Modules\MenteeAdd.ascx" />
+    <Content Include="Modules\MenteeButterflyInfo.ascx" />
+    <Content Include="Modules\MenteeCommitmentInfo.ascx" />
+    <Content Include="Modules\MenteeDetails.ascx" />
+    <Content Include="Modules\MenteeInfo.ascx" />
+    <Content Include="Modules\MenteeInternshipInfo.ascx" />
+    <Content Include="Modules\Mentees.ascx" />
+    <Content Include="Modules\MenteeSchool.ascx" />
+    <Content Include="Modules\MenteeSocietalLaunch.ascx" />
+    <Content Include="Modules\MenteeSponsors.ascx" />
+    <Content Include="Modules\MenteeWorkshop.ascx" />
+    <Content Include="Modules\MentorAdd.ascx" />
+    <Content Include="Modules\MentorDetails.ascx" />
+    <Content Include="Modules\MentorEvent.ascx" />
+    <Content Include="Modules\MentorInfo.ascx" />
+    <Content Include="Modules\MentorPaymentDetails.ascx" />
+    <Content Include="Modules\Mentors.ascx" />
+    <Content Include="Modules\MenuControl.ascx" />
+    <Content Include="Modules\RaiseMentorInvoice.ascx" />
+    <Content Include="Modules\ReceivePayments.ascx" />
+    <Content Include="Modules\SchoolAdd.ascx" />
+    <Content Include="Modules\SchoolDetails.ascx" />
+    <Content Include="Modules\SchoolInfo.ascx" />
+    <Content Include="Modules\Schools.ascx" />
+    <Content Include="Modules\SimpleTextBox.ascx" />
+    <Content Include="Modules\SponsorAdd.ascx" />
+    <Content Include="Modules\SponsorDetails.ascx" />
+    <Content Include="Modules\SponsorGrant.ascx" />
+    <Content Include="Modules\SponsorGrantInfo.ascx" />
+    <Content Include="Modules\SponsorInfo.ascx" />
+    <Content Include="Modules\SponsorMeetings.ascx" />
+    <Content Include="Modules\Sponsors.ascx" />
+    <Content Include="Modules\Sponsorships.ascx" />
+    <Content Include="Modules\ToolTipLabelControl.ascx" />
+    <Content Include="Modules\TypoPartner.ascx" />
+    <Content Include="Modules\TypoPartnerSpecific.ascx" />
+    <Content Include="Modules\TypoSchool.ascx" />
+    <Content Include="Modules\TypoSchoolSpecific.ascx" />
+    <Content Include="PostSponsorPayment.aspx" />
+    <Content Include="RaiseMentorInvoice.aspx" />
+    <Content Include="RaiseMentorInvoiceValues.aspx" />
+    <Content Include="Reports\ButterfliesGeneral.ascx" />
+    <Content Include="Reports\FinancialPartnerPeriodic.ascx" />
+    <Content Include="Reports\FinancialPartnersGeneral.ascx" />
+    <Content Include="Reports\InternshipPartnerGeneral.ascx" />
+    <Content Include="Reports\MenteeGivebackGeneral.ascx" />
+    <Content Include="Reports\MenteesGeneral.ascx" />
+    <Content Include="Reports\MentInternshipGeneral.ascx" />
+    <Content Include="Reports\MentorGeneral.ascx" />
+    <Content Include="App_Browsers\Admin\Countries.aspx" />
+    <Content Include="App_Browsers\Admin\CreateUsers.aspx" />
+    <Content Include="CustomError.htm" />
+    <Content Include="Default.aspx" />
+    <Content Include="Reports\PartSchoolsGeneral.ascx" />
+    <Content Include="Reports\SummaryBeneficiaries.ascx" />
+    <Content Include="Reports\SummaryButterfly.ascx" />
+    <Content Include="Reports\SummaryFPartner.ascx" />
+    <Content Include="Reports\SummaryIntershipOrgz.ascx" />
+    <Content Include="Reports\SummaryMentor.ascx" />
+    <Content Include="Reports\SummParticipatingSchools.ascx" />
+    <Content Include="rptButterflyGeneral.aspx" />
+    <Content Include="rptButterflySummary.aspx" />
+    <Content Include="rptFinancialPartnerGeneral.aspx" />
+    <Content Include="rptFinancialPartnerSummary.aspx" />
+    <Content Include="rptFinpartnerperiodic.aspx" />
+    <Content Include="rptGeneralFinancial.aspx" />
+    <Content Include="rptGeneralMentee.aspx" />
+    <Content Include="rptGenmentor.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="App_Browsers\Admin\MenteeMaintenance.aspx" />
+    <Content Include="rptGivebackGeneral.aspx" />
+    <Content Include="rptInternOrgsSummary.aspx" />
+    <Content Include="rptIPartnerGeneral.aspx" />
+    <Content Include="rptMenteeInternshipGeneral.aspx" />
+    <Content Include="rptMentInternship.aspx" />
+    <Content Include="rptParticipatingSchoolsGeneral.aspx" />
+    <Content Include="rptPartSchoolsSummary.aspx" />
+    <Content Include="SchoolAdd.aspx" />
+    <Content Include="SchoolDetails.aspx" />
+    <Content Include="Schools.aspx" />
+    <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery.idTabs.min.js" />
+    <Content Include="Scripts\jquery.superfishmenu.js" />
+    <Content Include="SponsorAdd.aspx" />
+    <Content Include="SponsorDetails.aspx" />
+    <Content Include="SponsorGrants.aspx" />
+    <Content Include="Sponsors.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="TestPage.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Workshopinfo.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Countries.aspx.designer.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Countries.aspx.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateUsers.aspx.designer.vb">
+      <DependentUpon>CreateUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateUsers.aspx.vb">
+      <DependentUpon>CreateUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MenteeMaintenance.aspx.designer.vb">
+      <DependentUpon>MenteeMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MenteeMaintenance.aspx.vb">
+      <DependentUpon>MenteeMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeneficiariesSummary.aspx.designer.vb">
+      <DependentUpon>BeneficiariesSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeneficiariesSummary.aspx.vb">
+      <DependentUpon>BeneficiariesSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Common.vb" />
+    <Compile Include="Controls\BaseSTKAdministrationPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseSTKAdministrationUserControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\DataAccess.vb" />
+    <Compile Include="GrantBeneficiary.aspx.designer.vb">
+      <DependentUpon>GrantBeneficiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GrantBeneficiary.aspx.vb">
+      <DependentUpon>GrantBeneficiary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalOrgAdd.aspx.designer.vb">
+      <DependentUpon>LocalOrgAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalOrgAdd.aspx.vb">
+      <DependentUpon>LocalOrgAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalOrgDetails.aspx.designer.vb">
+      <DependentUpon>LocalOrgDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalOrgDetails.aspx.vb">
+      <DependentUpon>LocalOrgDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LocalOrgs.aspx.designer.vb">
+      <DependentUpon>LocalOrgs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalOrgs.aspx.vb">
+      <DependentUpon>LocalOrgs.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.vb">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenteeAdd.aspx.designer.vb">
+      <DependentUpon>MenteeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenteeAdd.aspx.vb">
+      <DependentUpon>MenteeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenteeDetails.aspx.designer.vb">
+      <DependentUpon>MenteeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenteeDetails.aspx.vb">
+      <DependentUpon>MenteeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseSTKAdministrationMasterPage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mentees.aspx.designer.vb">
+      <DependentUpon>Mentees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mentees.aspx.vb">
+      <DependentUpon>Mentees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorAdd.aspx.designer.vb">
+      <DependentUpon>MentorAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MentorAdd.aspx.vb">
+      <DependentUpon>MentorAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorDetails.aspx.designer.vb">
+      <DependentUpon>MentorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MentorDetails.aspx.vb">
+      <DependentUpon>MentorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mentors.aspx.designer.vb">
+      <DependentUpon>Mentors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mentors.aspx.vb">
+      <DependentUpon>Mentors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MentorSummary.aspx.designer.vb">
+      <DependentUpon>MentorSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MentorSummary.aspx.vb">
+      <DependentUpon>MentorSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ConfirmationBox.ascx.designer.vb">
+      <DependentUpon>ConfirmationBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ConfirmationBox.ascx.vb">
+      <DependentUpon>ConfirmationBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\CountrySelector.ascx.designer.vb">
+      <DependentUpon>CountrySelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CountrySelector.ascx.vb">
+      <DependentUpon>CountrySelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DatePicker.ascx.designer.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DatePicker.ascx.vb">
+      <DependentUpon>DatePicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ddlCompanySelector.ascx.designer.vb">
+      <DependentUpon>ddlCompanySelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ddlCompanySelector.ascx.vb">
+      <DependentUpon>ddlCompanySelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ddlLocalOrgSelector.ascx.designer.vb">
+      <DependentUpon>ddlLocalOrgSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ddlLocalOrgSelector.ascx.vb">
+      <DependentUpon>ddlLocalOrgSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ddlMentorSelector.ascx.designer.vb">
+      <DependentUpon>ddlMentorSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ddlMentorSelector.ascx.vb">
+      <DependentUpon>ddlMentorSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ddlSchoolSelector.ascx.designer.vb">
+      <DependentUpon>ddlSchoolSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ddlSchoolSelector.ascx.vb">
+      <DependentUpon>ddlSchoolSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ddlSelector.ascx.designer.vb">
+      <DependentUpon>ddlSelector.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ddlSelector.ascx.vb">
+      <DependentUpon>ddlSelector.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\DecimalTextBox.ascx.designer.vb">
+      <DependentUpon>DecimalTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DecimalTextBox.ascx.vb">
+      <DependentUpon>DecimalTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\EmailTextBox.ascx.designer.vb">
+      <DependentUpon>EmailTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\EmailTextBox.ascx.vb">
+      <DependentUpon>EmailTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\GrantBeneficiary.ascx.designer.vb">
+      <DependentUpon>GrantBeneficiary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\GrantBeneficiary.ascx.vb">
+      <DependentUpon>GrantBeneficiary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\InvoicePayment.ascx.designer.vb">
+      <DependentUpon>InvoicePayment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\InvoicePayment.ascx.vb">
+      <DependentUpon>InvoicePayment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationAdd.ascx.designer.vb">
+      <DependentUpon>LocalOrganizationAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationAdd.ascx.vb">
+      <DependentUpon>LocalOrganizationAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationDetails.ascx.designer.vb">
+      <DependentUpon>LocalOrganizationDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationDetails.ascx.vb">
+      <DependentUpon>LocalOrganizationDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationInfo.ascx.designer.vb">
+      <DependentUpon>LocalOrganizationInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizationInfo.ascx.vb">
+      <DependentUpon>LocalOrganizationInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizations.ascx.designer.vb">
+      <DependentUpon>LocalOrganizations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\LocalOrganizations.ascx.vb">
+      <DependentUpon>LocalOrganizations.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeAdd.ascx.designer.vb">
+      <DependentUpon>MenteeAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeAdd.ascx.vb">
+      <DependentUpon>MenteeAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeButterflyInfo.ascx.designer.vb">
+      <DependentUpon>MenteeButterflyInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeButterflyInfo.ascx.vb">
+      <DependentUpon>MenteeButterflyInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeCommitmentInfo.ascx.designer.vb">
+      <DependentUpon>MenteeCommitmentInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeCommitmentInfo.ascx.vb">
+      <DependentUpon>MenteeCommitmentInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeDetails.ascx.designer.vb">
+      <DependentUpon>MenteeDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeDetails.ascx.vb">
+      <DependentUpon>MenteeDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeInfo.ascx.designer.vb">
+      <DependentUpon>MenteeInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeInfo.ascx.vb">
+      <DependentUpon>MenteeInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeInternshipInfo.ascx.designer.vb">
+      <DependentUpon>MenteeInternshipInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeInternshipInfo.ascx.vb">
+      <DependentUpon>MenteeInternshipInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Mentees.ascx.designer.vb">
+      <DependentUpon>Mentees.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mentees.ascx.vb">
+      <DependentUpon>Mentees.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeSchool.ascx.designer.vb">
+      <DependentUpon>MenteeSchool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeSchool.ascx.vb">
+      <DependentUpon>MenteeSchool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeSocietalLaunch.ascx.designer.vb">
+      <DependentUpon>MenteeSocietalLaunch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeSocietalLaunch.ascx.vb">
+      <DependentUpon>MenteeSocietalLaunch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeSponsors.ascx.designer.vb">
+      <DependentUpon>MenteeSponsors.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeSponsors.ascx.vb">
+      <DependentUpon>MenteeSponsors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenteeWorkshop.ascx.designer.vb">
+      <DependentUpon>MenteeWorkshop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenteeWorkshop.ascx.vb">
+      <DependentUpon>MenteeWorkshop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MentorAdd.ascx.designer.vb">
+      <DependentUpon>MentorAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MentorAdd.ascx.vb">
+      <DependentUpon>MentorAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MentorDetails.ascx.designer.vb">
+      <DependentUpon>MentorDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MentorDetails.ascx.vb">
+      <DependentUpon>MentorDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MentorEvent.ascx.designer.vb">
+      <DependentUpon>MentorEvent.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MentorEvent.ascx.vb">
+      <DependentUpon>MentorEvent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MentorInfo.ascx.designer.vb">
+      <DependentUpon>MentorInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MentorInfo.ascx.vb">
+      <DependentUpon>MentorInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MentorPaymentDetails.ascx.designer.vb">
+      <DependentUpon>MentorPaymentDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MentorPaymentDetails.ascx.vb">
+      <DependentUpon>MentorPaymentDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Mentors.ascx.designer.vb">
+      <DependentUpon>Mentors.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Mentors.ascx.vb">
+      <DependentUpon>Mentors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\MenuControl.ascx.designer.vb">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MenuControl.ascx.vb">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\RaiseMentorInvoice.ascx.designer.vb">
+      <DependentUpon>RaiseMentorInvoice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RaiseMentorInvoice.ascx.vb">
+      <DependentUpon>RaiseMentorInvoice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ReceivePayments.ascx.designer.vb">
+      <DependentUpon>ReceivePayments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReceivePayments.ascx.vb">
+      <DependentUpon>ReceivePayments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SchoolAdd.ascx.designer.vb">
+      <DependentUpon>SchoolAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SchoolAdd.ascx.vb">
+      <DependentUpon>SchoolAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SchoolDetails.ascx.designer.vb">
+      <DependentUpon>SchoolDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SchoolDetails.ascx.vb">
+      <DependentUpon>SchoolDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SchoolInfo.ascx.designer.vb">
+      <DependentUpon>SchoolInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SchoolInfo.ascx.vb">
+      <DependentUpon>SchoolInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Schools.ascx.designer.vb">
+      <DependentUpon>Schools.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Schools.ascx.vb">
+      <DependentUpon>Schools.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SimpleTextBox.ascx.designer.vb">
+      <DependentUpon>SimpleTextBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SimpleTextBox.ascx.vb">
+      <DependentUpon>SimpleTextBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorAdd.ascx.designer.vb">
+      <DependentUpon>SponsorAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorAdd.ascx.vb">
+      <DependentUpon>SponsorAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorDetails.ascx.designer.vb">
+      <DependentUpon>SponsorDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorDetails.ascx.vb">
+      <DependentUpon>SponsorDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorGrant.ascx.designer.vb">
+      <DependentUpon>SponsorGrant.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorGrant.ascx.vb">
+      <DependentUpon>SponsorGrant.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorGrantInfo.ascx.designer.vb">
+      <DependentUpon>SponsorGrantInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorGrantInfo.ascx.vb">
+      <DependentUpon>SponsorGrantInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorInfo.ascx.designer.vb">
+      <DependentUpon>SponsorInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorInfo.ascx.vb">
+      <DependentUpon>SponsorInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\SponsorMeetings.ascx.designer.vb">
+      <DependentUpon>SponsorMeetings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SponsorMeetings.ascx.vb">
+      <DependentUpon>SponsorMeetings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Sponsors.ascx.designer.vb">
+      <DependentUpon>Sponsors.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Sponsors.ascx.vb">
+      <DependentUpon>Sponsors.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Sponsorships.ascx.designer.vb">
+      <DependentUpon>Sponsorships.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Sponsorships.ascx.vb">
+      <DependentUpon>Sponsorships.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\ToolTipLabelControl.ascx.designer.vb">
+      <DependentUpon>ToolTipLabelControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ToolTipLabelControl.ascx.vb">
+      <DependentUpon>ToolTipLabelControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TypoPartner.ascx.designer.vb">
+      <DependentUpon>TypoPartner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TypoPartner.ascx.vb">
+      <DependentUpon>TypoPartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TypoPartnerSpecific.ascx.designer.vb">
+      <DependentUpon>TypoPartnerSpecific.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TypoPartnerSpecific.ascx.vb">
+      <DependentUpon>TypoPartnerSpecific.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TypoSchool.ascx.designer.vb">
+      <DependentUpon>TypoSchool.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TypoSchool.ascx.vb">
+      <DependentUpon>TypoSchool.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\TypoSchoolSpecific.ascx.designer.vb">
+      <DependentUpon>TypoSchoolSpecific.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\TypoSchoolSpecific.ascx.vb">
+      <DependentUpon>TypoSchoolSpecific.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="popup.master.designer.vb">
+      <DependentUpon>popup.master</DependentUpon>
+    </Compile>
+    <Compile Include="popup.master.vb">
+      <DependentUpon>popup.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostSponsorPayment.aspx.designer.vb">
+      <DependentUpon>PostSponsorPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostSponsorPayment.aspx.vb">
+      <DependentUpon>PostSponsorPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaiseMentorInvoice.aspx.designer.vb">
+      <DependentUpon>RaiseMentorInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaiseMentorInvoice.aspx.vb">
+      <DependentUpon>RaiseMentorInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaiseMentorInvoiceValues.aspx.designer.vb">
+      <DependentUpon>RaiseMentorInvoiceValues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaiseMentorInvoiceValues.aspx.vb">
+      <DependentUpon>RaiseMentorInvoiceValues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ButterfliesGeneral.ascx.designer.vb">
+      <DependentUpon>ButterfliesGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ButterfliesGeneral.ascx.vb">
+      <DependentUpon>ButterfliesGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\FinancialPartnerPeriodic.ascx.designer.vb">
+      <DependentUpon>FinancialPartnerPeriodic.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FinancialPartnerPeriodic.ascx.vb">
+      <DependentUpon>FinancialPartnerPeriodic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\FinancialPartnersGeneral.ascx.designer.vb">
+      <DependentUpon>FinancialPartnersGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FinancialPartnersGeneral.ascx.vb">
+      <DependentUpon>FinancialPartnersGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\InternshipPartnerGeneral.ascx.designer.vb">
+      <DependentUpon>InternshipPartnerGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InternshipPartnerGeneral.ascx.vb">
+      <DependentUpon>InternshipPartnerGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MenteeGivebackGeneral.ascx.designer.vb">
+      <DependentUpon>MenteeGivebackGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MenteeGivebackGeneral.ascx.vb">
+      <DependentUpon>MenteeGivebackGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MenteesGeneral.ascx.designer.vb">
+      <DependentUpon>MenteesGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MenteesGeneral.ascx.vb">
+      <DependentUpon>MenteesGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MentInternshipGeneral.ascx.designer.vb">
+      <DependentUpon>MentInternshipGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MentInternshipGeneral.ascx.vb">
+      <DependentUpon>MentInternshipGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\MentorGeneral.ascx.designer.vb">
+      <DependentUpon>MentorGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MentorGeneral.ascx.vb">
+      <DependentUpon>MentorGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\Countries.aspx.designer.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\Countries.aspx.vb">
+      <DependentUpon>Countries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\CreateUsers.aspx.designer.vb">
+      <DependentUpon>CreateUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\CreateUsers.aspx.vb">
+      <DependentUpon>CreateUsers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PartSchoolsGeneral.ascx.designer.vb">
+      <DependentUpon>PartSchoolsGeneral.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PartSchoolsGeneral.ascx.vb">
+      <DependentUpon>PartSchoolsGeneral.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryBeneficiaries.ascx.designer.vb">
+      <DependentUpon>SummaryBeneficiaries.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryBeneficiaries.ascx.vb">
+      <DependentUpon>SummaryBeneficiaries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryButterfly.ascx.designer.vb">
+      <DependentUpon>SummaryButterfly.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryButterfly.ascx.vb">
+      <DependentUpon>SummaryButterfly.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryFPartner.ascx.designer.vb">
+      <DependentUpon>SummaryFPartner.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryFPartner.ascx.vb">
+      <DependentUpon>SummaryFPartner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryIntershipOrgz.ascx.designer.vb">
+      <DependentUpon>SummaryIntershipOrgz.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryIntershipOrgz.ascx.vb">
+      <DependentUpon>SummaryIntershipOrgz.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummaryMentor.ascx.designer.vb">
+      <DependentUpon>SummaryMentor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummaryMentor.ascx.vb">
+      <DependentUpon>SummaryMentor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\SummParticipatingSchools.ascx.designer.vb">
+      <DependentUpon>SummParticipatingSchools.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SummParticipatingSchools.ascx.vb">
+      <DependentUpon>SummParticipatingSchools.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptButterflyGeneral.aspx.designer.vb">
+      <DependentUpon>rptButterflyGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptButterflyGeneral.aspx.vb">
+      <DependentUpon>rptButterflyGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptButterflySummary.aspx.designer.vb">
+      <DependentUpon>rptButterflySummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptButterflySummary.aspx.vb">
+      <DependentUpon>rptButterflySummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptFinancialPartnerGeneral.aspx.designer.vb">
+      <DependentUpon>rptFinancialPartnerGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptFinancialPartnerGeneral.aspx.vb">
+      <DependentUpon>rptFinancialPartnerGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptFinancialPartnerSummary.aspx.designer.vb">
+      <DependentUpon>rptFinancialPartnerSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptFinancialPartnerSummary.aspx.vb">
+      <DependentUpon>rptFinancialPartnerSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptFinpartnerperiodic.aspx.designer.vb">
+      <DependentUpon>rptFinpartnerperiodic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptFinpartnerperiodic.aspx.vb">
+      <DependentUpon>rptFinpartnerperiodic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptGeneralFinancial.aspx.designer.vb">
+      <DependentUpon>rptGeneralFinancial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptGeneralFinancial.aspx.vb">
+      <DependentUpon>rptGeneralFinancial.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptGeneralMentee.aspx.designer.vb">
+      <DependentUpon>rptGeneralMentee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptGeneralMentee.aspx.vb">
+      <DependentUpon>rptGeneralMentee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptGenmentor.aspx.designer.vb">
+      <DependentUpon>rptGenmentor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptGenmentor.aspx.vb">
+      <DependentUpon>rptGenmentor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\MenteeMaintenance.aspx.designer.vb">
+      <DependentUpon>MenteeMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Browsers\Admin\MenteeMaintenance.aspx.vb">
+      <DependentUpon>MenteeMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="rptGivebackGeneral.aspx.designer.vb">
+      <DependentUpon>rptGivebackGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptGivebackGeneral.aspx.vb">
+      <DependentUpon>rptGivebackGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptInternOrgsSummary.aspx.designer.vb">
+      <DependentUpon>rptInternOrgsSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptInternOrgsSummary.aspx.vb">
+      <DependentUpon>rptInternOrgsSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptIPartnerGeneral.aspx.designer.vb">
+      <DependentUpon>rptIPartnerGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptIPartnerGeneral.aspx.vb">
+      <DependentUpon>rptIPartnerGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptMenteeInternshipGeneral.aspx.designer.vb">
+      <DependentUpon>rptMenteeInternshipGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptMenteeInternshipGeneral.aspx.vb">
+      <DependentUpon>rptMenteeInternshipGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptMentInternship.aspx.designer.vb">
+      <DependentUpon>rptMentInternship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptMentInternship.aspx.vb">
+      <DependentUpon>rptMentInternship.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rptParticipatingSchoolsGeneral.aspx.designer.vb">
+      <DependentUpon>rptParticipatingSchoolsGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptParticipatingSchoolsGeneral.aspx.vb">
+      <DependentUpon>rptParticipatingSchoolsGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptPartSchoolsSummary.aspx.designer.vb">
+      <DependentUpon>rptPartSchoolsSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rptPartSchoolsSummary.aspx.vb">
+      <DependentUpon>rptPartSchoolsSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SchoolAdd.aspx.designer.vb">
+      <DependentUpon>SchoolAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolAdd.aspx.vb">
+      <DependentUpon>SchoolAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SchoolDetails.aspx.designer.vb">
+      <DependentUpon>SchoolDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolDetails.aspx.vb">
+      <DependentUpon>SchoolDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Schools.aspx.designer.vb">
+      <DependentUpon>Schools.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Schools.aspx.vb">
+      <DependentUpon>Schools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowImageMentee.ashx.vb">
+      <DependentUpon>ShowImageMentee.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="ShowImage.ashx.vb">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SponsorAdd.aspx.designer.vb">
+      <DependentUpon>SponsorAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorAdd.aspx.vb">
+      <DependentUpon>SponsorAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SponsorDetails.aspx.designer.vb">
+      <DependentUpon>SponsorDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorDetails.aspx.vb">
+      <DependentUpon>SponsorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SponsorGrants.aspx.designer.vb">
+      <DependentUpon>SponsorGrants.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SponsorGrants.aspx.vb">
+      <DependentUpon>SponsorGrants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sponsors.aspx.designer.vb">
+      <DependentUpon>Sponsors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sponsors.aspx.vb">
+      <DependentUpon>Sponsors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestPage.aspx.designer.vb">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.aspx.vb">
+      <DependentUpon>TestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Workshopinfo.aspx.designer.vb">
+      <DependentUpon>Workshopinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workshopinfo.aspx.vb">
+      <DependentUpon>Workshopinfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Admin\web.config" />
+    <Content Include="Admin.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ConnectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\Site\Site.skin" />
+    <Content Include="Admin\web.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="packages.config" />
+    <Content Include="ShowImage.ashx" />
+    <Content Include="ShowImageMentee.ashx" />
+    <Content Include="Web.sitemap" />
+    <Content Include="popup.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Files\Reports\" />
+    <Folder Include="MasterPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>45666</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/GGBC</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

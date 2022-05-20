@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap enableLocalization="true" xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home"  description="Administration Home"  STKResourceTitle="" STKResourceDescription="Admin.Sitemap.HomeDescription">
+    <!-- Home -->
+    <siteMapNode title="Dashboard"  url="~/" IconUrl="~/common/ico-configuration.png" description="View the dashboard" STKResourceTitle="Admin.Sitemap.DashboardTitle" STKResourceDescription="Admin.Sitemap.DashboardDescription" />
+    <!-- End Home -->
+
+    <!-- Beneficiaries -->
+    <siteMapNode title="Beneficiaries" url="" IconUrl="~/common/ico-configuration.png" description="Admin.Sitemap.BeneficiariesHomeDescription" STKResourceTitle="Beneficiaries" STKResourceDescription="Admin.Sitemap.BeneficiariesHomeTitle" >
+      <!--<siteMapNode title="Add Edit Mentee" url="~/AddEditMentee.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Mentee School Info" url="~/AddEditMenteeSchoolInfo.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Societal Launch Info" url="~/Societallaunch.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Internship Info" url="~/InternshipInfo.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Give Back Commitment Info" url="~/CommitmentInfo.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Workshop Information" url="~/Workshopinfo.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />
+      <siteMapNode title="Butterfly Info" url="~/MenteeButterfly.aspx" description="Add Edit Mentee" STKResourceTitle="Admin.Sitemap.MenteesTitle" STKResourceDescription="Admin.Sitemap.MenteesDescription" />-->
+      <siteMapNode title="Mentees" url="~/Mentees.aspx" description="Manage Mentees" STKResourceTitle="MENTEE MODULE" STKResourceDescription="MENTEE MODULE" />
+    </siteMapNode>
+    <!-- End Beneficiaries -->
+
+    <!-- Mentor -->
+    <siteMapNode title="Mentor" url="" IconUrl="~/common/ico-configuration.png" description="Mentors Home" STKResourceTitle="Admin.Sitemap.MentorsHomeTitle" STKResourceDescription="Admin.Sitemap.MentorsHomeDescription" >
+      <siteMapNode title="Manage Mentors" url="~/Mentors.aspx" description="Manage Mentors" STKResourceTitle="Admin.Sitemap.MentorsInfoTitle" STKResourceDescription="Admin.Sitemap.MentorsInfoDescription" />
+      <!--<siteMapNode title="Add/Edit Mentors" url="~/AddEditMentor.aspx" description="Manage Mentors Info" STKResourceTitle="Admin.Sitemap.MentorsInfoTitle" STKResourceDescription="Admin.Sitemap.MentorsInfoDescription" />
+      <siteMapNode title="Mentor Raise Invoice" url="~/MentorRaiseInvoice.aspx" description="Manage Mentor Invoices" STKResourceTitle="Admin.Sitemap.MentorInvoicesTitle" STKResourceDescription="Admin.Sitemap.MentorInvoiceDescription" />-->
+    </siteMapNode>
+    <!-- End Mentor -->
+
+    <!-- Partners -->
+    <siteMapNode   title="Partners" url="" IconUrl="~/common/ico-configuration.png" description="Partners Home" STKResourceTitle="Partners" STKResourceDescription="Partners Menu" >
+      <siteMapNode title="Sponsors" url="~/Sponsors.aspx" description="Sponsors" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+      <siteMapNode title="Schools" url="~/Schools.aspx" description="Schools" STKResourceTitle="Add Edit Schools" STKResourceDescription="Add Edit Schools" />
+      <siteMapNode title="Local Recruitment Org" url="~/Localorgs.aspx" description="Local Recruitment Org" STKResourceTitle="Local Recruitment Org" STKResourceDescription="Add Edit Partners" />
+    </siteMapNode>
+    <!-- End Partners
+      <siteMapNode title="Meetings" url="~/Meetings.aspx" description="Meetings" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+      <siteMapNode title="Add Edit Partners" url="~/AddEditPartners.aspx" description="Add Edit Partners" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+        <siteMapNode title="Internship org" url="~/internshiporgs.aspx" description="Internship org" STKResourceTitle="Internship org" STKResourceDescription="Add Edit Partners" />
+        <siteMapNode title="Add Edit Partners" url="~/AddEditPartners.aspx" description="Add Edit Partners" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+      <siteMapNode title="Add Edit Schools" url="~/AddEditSchools.aspx" description="Add Edit Schools" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+      <siteMapNode title="Sponsor Payments" url="~/SponsorPayment.aspx" description="Sponsor Payments" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+    -->
+
+    <!-- Reports -->
+    <siteMapNode   title="Reports" url="" IconUrl="~/common/ico-configuration.png" description="Reports Home" STKResourceTitle="Partners" STKResourceDescription="Partners Menu" >
+      <!--<siteMapNode title="Mentees" url="" description="Mentees Report" STKResourceTitle="Mentees Report" STKResourceDescription="Add Edit Partners">
+        <siteMapNode title="Mentee Reports" url="~/rptMentee.aspx" description="Mentee Report" STKResourceTitle="Add Edit Partners" STKResourceDescription="Add Edit Partners" />
+      </siteMapNode>
+      <siteMapNode title="Mentors" url="" description="Mentors" STKResourceTitle="Mentors Report" STKResourceDescription="Mentor reports home">
+          <siteMapNode title="rptMentor Reports" url="~/rptMentor.aspx" description="rptMentor Report" STKResourceTitle="Mentor Repors" STKResourceDescription="Add Edit Partners" />
+      </siteMapNode>-->
+      <siteMapNode title="General" url="" description="General" STKResourceTitle="Genera Reports" STKResourceDescription="General reports home">
+        <siteMapNode title="General Mentee" url="~/rptGeneralMentee.aspx" description="General Mentee Report" STKResourceTitle="Mentor Repors" STKResourceDescription="Mentor reports" />
+		<siteMapNode title="Mentee Internship" url="~/rptMenteeInternshipGeneral.aspx" description="Mentee Internship Report" STKResourceTitle="Mentee Internship Report" STKResourceDescription="Mentee Internship Report" />
+		<siteMapNode title="Butteflies" url="~/rptButterflyGeneral.aspx" description="Butteflies Report" STKResourceTitle="Butteflies Report" STKResourceDescription="Butteflies Report" />
+		<siteMapNode title="Mentee Give back" url="~/rptGivebackGeneral.aspx" description="Mentee Give back Report" STKResourceTitle="Mentee Give back Report" STKResourceDescription="Mentee Give back Report" />
+		<siteMapNode title="Mentor" url="~/rptGenmentor.aspx" description="General Mentee Report" STKResourceTitle="Mentor Repors" STKResourceDescription="Mentor reports" />
+        <siteMapNode title="Financial Partner" url="~/rptFinancialPartnerGeneral.aspx" description="Financial Partner Report" STKResourceTitle="Financial Partner Report" STKResourceDescription="Financial Partner Report" />
+        <siteMapNode title="Financial Partner Periodic" url="~/rptFinpartnerperiodic.aspx" description="Financial Partner Periodic Report" STKResourceTitle="Financial Partner Periodic Report" STKResourceDescription="Financial Partner Periodic Report" />
+        <siteMapNode title="Internship Partner" url="~/rptIPartnerGeneral.aspx" description="Internship Partner Report" STKResourceTitle="Internship Partner Report" STKResourceDescription="Internship Partner Report" />
+        <siteMapNode title="Participating Schools" url="~/rptParticipatingSchoolsGeneral.aspx" description="Participating Schools Report" STKResourceTitle="Participating Schools Report" STKResourceDescription="Participating Schools Report" />
+        
+
+      </siteMapNode>
+      <siteMapNode title="Consolidated" url="" description="Consolidated" STKResourceTitle="Consolidated Reports" STKResourceDescription="Consolidated reports home">
+        <siteMapNode title="Beneficiaries" url="~/BeneficiariesSummary.aspx" description="Beneficiaries Summary Report" STKResourceTitle="Beneficiaries Summary Report" STKResourceDescription="Beneficiaries Summary Report" />
+        <siteMapNode title="Financial Partner" url="~/rptFinancialPartnerSummary.aspx" description="Financial Partner Summary report" STKResourceTitle="Financial Partner Summary report" STKResourceDescription="Financial Partner Summary report" />
+        <siteMapNode title="Participating Schools" url="~/rptPartSchoolsSummary.aspx" description="Participating Schools Summary Report" STKResourceTitle="Participating Schools Summary Report" STKResourceDescription="Participating Schools Summary report" />
+        <siteMapNode title="Mentor" url="~/MentorSummary.aspx" description="Summary Mentor Report" STKResourceTitle="Summary Mentor Report" STKResourceDescription="Summary Mentor Report" />
+        <siteMapNode title="Internship Organizations" url="~/rptInternOrgsSummary.aspx" description="Internship Org Summary Report" STKResourceTitle="Internship Org Summary Report" STKResourceDescription="Internship Org Summary Report" />
+        <siteMapNode title="Butterflies" url="~/rptButterflySummary.aspx" description="Butterflies Summary Report" STKResourceTitle="Butterflies Summary Reports" STKResourceDescription="Butterflies Summary Reports" />
+      </siteMapNode>
+    </siteMapNode>
+    <!-- End Reports -->
+    
+    <!-- Maintenance -->
+    <siteMapNode title="Maintenance" url="" IconUrl="~/common/ico-configuration.png" description="" STKResourceTitle="Admin.Sitemap.MentorsHomeTitle" STKResourceDescription="Admin.Sitemap.MentorsHomeDescription" >
+      <siteMapNode title="DropDowns" url="~/Admin/MenteeMaintenance.aspx" description="Drop Downs" STKResourceTitle="Admin.Sitemap.MentorsInfoTitle" STKResourceDescription="Admin.Sitemap.MentorsInfoDescription" />
+      <siteMapNode title="Countries" url="~/Admin/Countries.aspx" description="Countries" STKResourceTitle="Admin.Sitemap.MentorInvoicesTitle" STKResourceDescription="Admin.Sitemap.MentorInvoiceDescription" />
+      <siteMapNode title="Create Users" url="~/Admin/CreateUsers.aspx" description="Create Users" STKResourceTitle="Admin.Sitemap.MentorInvoicesTitle" STKResourceDescription="Admin.Sitemap.MentorInvoiceDescription" />
+    </siteMapNode>
+    <!-- End Maintenance -->
+  </siteMapNode>
+</siteMap>

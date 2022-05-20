@@ -1,0 +1,85 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="GGBC.Smartik.Administration.Site" %>
+
+<%@ Register TagPrefix="SmarTik" TagName="Menu" Src="Modules/MenuControl.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>KCDF Administration</title>
+    <asp:PlaceHolder id="SCRIPTS" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="sm1" EnableScriptGlobalization="true" EnableScriptLocalization="true"
+        ScriptMode="Release" CompositeScript-ScriptMode="Release" />
+    <div class="master-wrapper-page">
+        <div class="globe4">
+        <div class="globe3"> 
+        <div class="globe2"> 
+        <div class="master-wrapper-content"> 
+
+            <div class="header">
+                <div class="header-links-wrapper">
+                    <div class="header-links">
+                        <div class="center">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    
+                </div>
+                <div class="login-info">
+                    
+                </div>
+                <div class="version">
+                    <asp:Label runat="server" ID="lblHeader" />
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="status-bar">
+                <div style="background-color: #038346; margin-left:0px; float:left; min-height: 32px; width: 10pt; " ></div>
+                <div style="border-left: 10px solid #038346; margin-left:193px; float:left; min-height: 32px " ></div>
+                <div class="help">
+                   <asp:LoginView ID="topLoginView" runat="server">
+                            <LoggedInTemplate>
+                                Logged in as:
+                                <%=Page.User.Identity.Name %>, on <%=DateTime.UtcNow.ToString("f")%> - <a style="color: #FFF; text-decoration: wavy;" href="<%=Page.ResolveUrl("~/logout.aspx")%>">
+                                    Logout?</a>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                </div>
+                <div class="breadcrumb">
+                    
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="header-menu">
+                <SmarTik:Menu runat="server" ID="ctrlMenu" SiteMapProviderName="STKAdminXmlSiteMapProvider" />
+            </div>
+            <div class="clear">
+            </div>
+            <div class="content">
+                <asp:Panel runat="server" ID="pnlMessage" EnableViewState="false" Visible="false">
+                    <asp:Literal runat="server" ID="lMessage" EnableViewState="false" />
+                    <asp:Literal runat="server" ID="lMessageComplete" EnableViewState="false" />
+                </asp:Panel>
+                <div class="cph">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <asp:Literal ID="lCopyright" runat="server" />
+            </div>
+        </div> 
+        </div> 
+        </div> 
+        </div> 
+    </div>
+    </form>
+</body>
+</html>
